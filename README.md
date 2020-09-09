@@ -67,3 +67,8 @@
 - O usuário não pode agendar em um horário já ocupado;
 - O usuário não pode agendar em um horário que já passou;
 - O usuário não pode agendar serviços consigo;
+
+1. Rotas e controllers
+2. Repositorio de tokens (TypeORM)
+3. Provider de envio de e-mail (DEV)
+4. Testar tudo!
