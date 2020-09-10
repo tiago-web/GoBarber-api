@@ -55,7 +55,16 @@ class UpdateProfile {
 			throw new AppError("Old password is required to set a new password");
 		}
 
-		if (password) {
+		if (password && old_password) {
+			const checkOldPassword = await this.hashProvider.compareHash(
+				user.password,
+				old_password
+			);
+
+			if (!checkOldPassword) {
+				throw new AppError("Old password does not match");
+			}
+
 			user.password = await this.hashProvider.generateHash(password);
 		}
 
