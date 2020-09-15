@@ -156,14 +156,14 @@ After your pull request is merged, you can delete your branch
 
 # :hammer: Issues
 
-Feel free to file a new issue with a respective title and description on the [GoBarber-mobile](https://github.com/tiago-web/GoBarber-mobile/issues) repository. 
+Feel free to file a new issue with a respective title and description on the [GoBarber-api](https://github.com/tiago-web/GoBarber-api/issues) repository. 
 If you already found a solution to your problem, **i would appreciate to review your pull request**!
 
 
 # :book: License
 
 Released in 2020.
-This project is under the [MIT license](https://github.com/tiago-web/GoBarber-mobile/blob/master/LICENSE).
+This project is under the [MIT license](https://github.com/tiago-web/GoBarber-api/blob/master/LICENSE).
 
 ---
 
