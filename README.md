@@ -1,74 +1,171 @@
-# Recuperação de senha
+<p align="center">
+  <img alt="Logo" src=".github/gobarber-logo.svg" width="200px">
+</p>
 
-**Requisitos Funcionais (RF)**
 
-- O usuário deve poder recuperar sua senha informando seu e-mail;
-- O usuário deve poder receber um e-mail com instruções de recuperação e senha;
-- O usuário deve poder resetar sua senha;
+# Express API for the GoBarber project
 
-**Requisitos Não Funcionais (RNF)**
+> Schedule a haircut the easiest way
 
-- Utilizar Mailtrap para testar envios de e-mail em ambientes de desenvolvimento;
-- Utilizar Amazon SES para envios em produção;
-- O envio de e-mail deve acontecer em segundo plano (background job);
+<p align="center">
+  <a href="https://www.linkedin.com/in/tiago-soriano/" target="_blank" rel="noopener noreferrer">
+    <img alt="Author" src="https://img.shields.io/badge/Author-tiago--web-%23FF9000">
+  </a>
+  
+  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/tiago-web/GoBarber-api?color=%23FF9000">
 
-**Regras de Negócio (RN)**
+  <a href="https://github.com/tiago-web/GoBarber-api/stargazers">
+    <img alt="Stars" src="https://img.shields.io/github/stars/tiago-web/GoBarber-api?color=%23FF9000" />
+   </a>
 
-- O link enviado por e-mail para resetar senha, deve expirar em 2h;
-- O usuário precisa confirmar a nova senha ao resetar sua senha;
+  <a href="https://github.com/tiago-web/GoBarber-api/issues">
+    <img alt="Repository issues" src="https://img.shields.io/github/issues/tiago-web/GoBarber-api?color=%23FF9000">
+  </a>
 
-# Atualização do perfil
+  <img alt="GitHub" src="https://img.shields.io/github/license/tiago-web/GoBarber-api?color=%23FF9000">
+</p>
 
-**Requisitos Funcionais (RF)**
+<p id="insomniaButton" align="center">
+  <a href="https://insomnia.rest/run/?label=GoBarber-api&uri=https%3A%2F%2Fraw.githubusercontent.com%2Ftiago-web%2FGobarber-api%2Fmaster%2FInsomnia.json" target="_blank"><img src="https://insomnia.rest/images/run.svg" alt="Run in Insomnia"></a>
+</p>
 
-- O usuário deve poder atualizar seu nome, e-mail e senha;
+# :pushpin: Table of Contents
 
-**Regras de Negócio (RN)**
+* [About the project](#haircut-about-the-project)
+* [Technologies](#rocket-technologies)
+* [Getting Started](#checkered_flag-getting-started)
+* [How to contribute](#thinking-how-to-contribute)
+* [Found a bug? Missing a specific feature?](#hammer-issues)
+* [License](#book-license)
 
-- O usuário não pode alterar seu e-mail para um e-mail já utilizado;
-- Para atualizar sua senha, o usuário deve informar a senha antiga;
-- Para atualizar sua senha, o usuário precisa confirmar a senha antiga;
 
-# Painel do prestador
 
-**Requisitos Funcionais (RF)**
+# :haircut: About the project
 
-- O usuário deve poder listar seus agendamentos de um dia específico;
-- O prestador deve receber uma notificação sempre que houver um novo agendamento;
-- O prestador deve poder visualizar as notificações não lidas;
+This api provides everything needed to organize appointments between the barbers and customers.
 
-**Requisitos Não Funcionais (RNF)**
+Customers can choose the best time available to them.
 
-- Os agendamentos do prestador no dia devem ser armazenados em cache;
-- As notificações do prestador devem ser armazenadas no MongoDB;
-- As notificações do prestador devem ser enviadas em tempo-real utilizando Socket.io;
+Providers can see all their appointments, manage the times, also see if one client canceled the schedule.
 
-**Regras de Negócio (RN)**
+To see the **web client**, click here: [GoBarber Web](https://github.com/tiago-web/GoBarber-web)<br />
+To see the **mobile client**, click here: [GoBarber Mobile](https://github.com/tiago-web/GoBarber-mobile)
 
-- A notificação deve ter um status de lida ou não-lida para que o prestador possa controlar;
+# :rocket: Technologies
 
-# Agendamento de serviços
+Technologies that I used to develop this API
 
-**Requisitos Funcionais (RF)**
+- [Node.js](https://nodejs.org/en/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Express](https://expressjs.com/pt-br/)
+- [Multer](https://github.com/expressjs/multer)
+- [TypeORM](https://typeorm.io/#/)
+- [JWT-token](https://jwt.io/)
+- [uuid v4](https://github.com/thenativeweb/uuidv4/)
+- [PostgreSQL](https://www.postgresql.org/)
+- [Date-fns](https://date-fns.org/)
+- [Jest](https://jestjs.io/)
+- [SuperTest](https://github.com/visionmedia/supertest)
+- [Husky](https://github.com/typicode/husky)
+- [Commitlint](https://github.com/conventional-changelog/commitlint)
+- [Commitizen](https://github.com/commitizen/cz-cli)
 
-- O usuário deve poder listar todos prestadores de serviço cadastrados;
-- O usuário deve poder listar os dias de um mês com pelo menos um horário disponível de um prestador;
-- O usuário deve poder listar horários disponíveis em um dia específico de um prestador;
-- O usuário deve poder realizar um novo agendamento com um prestador;
 
-**Requisitos Não Funcionais (RNF)**
+# :checkered_flag: Getting Started
 
-- A listagem de prestadores deve ser armazenada em cache;
+Import the `Insomnia.json` on Insomnia App or click on [Run in Insomnia](#insomniaButton) button
 
-**Regras de Negócio (RN)**
+### Requirements
 
-- Cada agendamento deve durar 1h exatamente;
-- Os agendamentos devem estar disponíveis entre 8h às 18h (Primeiro às 8h, último às 17h);
-- O usuário não pode agendar em um horário já ocupado;
-- O usuário não pode agendar em um horário que já passou;
-- O usuário não pode agendar serviços consigo;
+- [Node.js](https://nodejs.org/en/)
+- [Yarn](https://classic.yarnpkg.com/) or [npm](https://www.npmjs.com/)
+- One instance of [PostgreSQL](https://www.postgresql.org/)
 
-1. Rotas e controllers
-2. Repositorio de tokens (TypeORM)
-3. Provider de envio de e-mail (DEV)
-4. Testar tudo!
+> PS: I recommend using docker
+
+**Clone the project and access the folder**
+
+```bash
+$ git clone https://github.com/tiago-web/GoBarber-api.git && cd GoBarber-api
+```
+
+**Follow the steps below**
+
+```bash
+# Install the dependencies
+$ yarn
+
+# Make a copy of '.env.example' to '.env'
+# and set with YOUR environment variables.
+# The aws variables do not need to be filled for dev environment
+$ cp .env.example .env
+
+# Create the instance of postgreSQL using docker
+$ docker run --name gobarber-postgres -e POSTGRES_USER=docker \
+              -e POSTGRES_DB=gobarber -e POSTGRES_PASSWORD=docker \
+              -p 5432:5432 -d postgres
+
+# Create the instance of mongoDB using docker
+$ docker run --name gobarber-mongodb -p 27017:27017 -d -t mongo
+
+# Create the instance of redis using docker
+$ docker run --name gobarber-redis -p 6379:6379 -d -t redis:alpine
+
+# Make a copy of 'ormconfig.example.json' to 'ormconfig.json'
+# and set the values, if they are not filled,
+# to connect with docker database containers
+$ cp ormconfig.example.json ormconfig.json
+
+# Once the services are running, run the migrations
+$ yarn typeorm migration:run
+
+# To finish, run the api service
+$ yarn dev:server
+
+# Well done, project is started!
+```
+
+# :thinking: How to contribute
+
+**Make a fork of this repository**
+
+```bash
+# Fork using GitHub official command line
+# If you don't have the GitHub CLI, use the web site to do that.
+
+$ gh repo fork tiago-web/GoBarber-api
+```
+
+**Follow the steps below**
+
+```bash
+# Clone your fork
+$ git clone your-fork-url && cd GoBarber-api
+
+# Create a branch with your feature
+$ git checkout -b my-feature
+
+# Make the commit with your changes
+$ git commit -m 'feat: My new feature'
+
+# Send the code to your remote branch
+$ git push origin my-feature
+```
+
+After your pull request is merged, you can delete your branch
+
+# :hammer: Issues
+
+Feel free to file a new issue with a respective title and description on the [GoBarber-mobile](https://github.com/tiago-web/GoBarber-mobile/issues) repository. 
+If you already found a solution to your problem, **i would appreciate to review your pull request**!
+
+
+# :book: License
+
+Released in 2020.
+This project is under the [MIT license](https://github.com/tiago-web/GoBarber-mobile/blob/master/LICENSE).
+
+---
+
+
+Made with ❤️ by Tiago Soriano [Check my LinkedIn](https://www.linkedin.com/in/tiago-soriano) 🚀
